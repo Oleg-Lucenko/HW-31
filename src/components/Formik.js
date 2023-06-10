@@ -6,13 +6,16 @@ const validate = (values) => {
   const errors = {};
 
     if (values.name === '') {
-      errors.name = 'Name should not be empty';
+      errors.name = 'Please, enter the name';
     }
     if (!values.email.includes('@')) {
       errors.email = 'Email should contain "@" ';
     }
+    if (values.number === ''){
+      errors.number = 'Please, enter the phone number';
+    }
     if (isNaN(Number(values.number))){
-      errors.number = 'Phone number contain only digits';
+      errors.number = 'Phone number must contain only digits';
     }
     if (values.number.length < 12 && Number(values.number)) {
       errors.number = 'Phone number must be 12 digits long';
@@ -50,6 +53,7 @@ function FormikInput() {
 
           {formik.touched.name && formik.errors.name && <div className='error'>{formik.errors.name}</div>}
         </div>
+
         <div className='input-container'>
           <label htmlFor="email">Email Address:</label>
           <input
