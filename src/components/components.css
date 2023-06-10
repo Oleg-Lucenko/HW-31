@@ -1,0 +1,22 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.formik {
+    flex-basis: 275px;
+}
+
+.formik input {
+    display: block;
+}
+
+.error {
+    color: red;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
